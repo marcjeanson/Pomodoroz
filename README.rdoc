@@ -1,4 +1,6 @@
-This is a sample Ruby on Rails application that will be used in a presentation.
+# Pomodoroz!
+This is a sample Ruby on Rails application that will be used for a presentation.
+It will implement a tool that could be helpful when using the [Pomodoro Technique](http://www.pomodorotechnique.com/).
 
 Each feature I implement will be in a separate features/XXX branch and pushed into github so that anybody interested can see the steps involved.
 
