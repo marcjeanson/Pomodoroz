@@ -10,4 +10,15 @@ describe ActivitiesController do
     it { should render_template(:index) }
     it { should assign_to(:activities) }
   end
+
+  context "get .new" do
+    before do
+      get :new
+    end
+
+    it { should respond_with(:success) }
+    it { should render_template(:new) }
+    it { should assign_to(:activity) }
+  end
+
 end
