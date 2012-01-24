@@ -1,3 +1,7 @@
+Given /^that activities exist$/ do
+  create_activities
+end
+
 Given /^the following activities exist:$/ do |activities|
   activities_from_table(activities)
 end
