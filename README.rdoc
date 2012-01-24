@@ -1,3 +1,11 @@
+This is a sample Ruby on Rails application that will be used in a presentation.
+
+Each feature I implement will be in a separate features/XXX branch and pushed into github so that anybody interested can see the steps involved.
+
+I'll add more information here shortly...
+
+Here is the usual RoR readme:
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
