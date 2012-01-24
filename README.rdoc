@@ -1,5 +1,4 @@
-Pomodoroz!
-==========
+= Pomodoroz!
 
 This is a sample Ruby on Rails application that will be used for a presentation.
 It will implement a tool that could be helpful when using the [Pomodoro Technique](http://www.pomodorotechnique.com/).
