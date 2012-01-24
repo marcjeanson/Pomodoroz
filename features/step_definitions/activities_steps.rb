@@ -25,5 +25,5 @@ end
 
 Then /^I should see the new activity in the activities list$/ do
   visit activities_path
-  page.should_have_content('Read email')
+  page.should have_content('Read email')
 end
