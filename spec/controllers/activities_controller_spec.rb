@@ -21,4 +21,16 @@ describe ActivitiesController do
     it { should assign_to(:activity) }
   end
 
+  context "post .create" do
+    context "with valid activity data" do
+      before do
+        post :create, activity: { title: "Check twitter" }
+      end
+
+      it { should redirect_to(activities_path) }
+    end
+
+    context "with invalid activity data"
+  end
+
 end
