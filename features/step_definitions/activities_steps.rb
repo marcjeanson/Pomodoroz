@@ -1,5 +1,5 @@
 Given /^the following activities exist:$/ do |activities|
-  @activities = activities.hashes.collect { |activity| Activity.create! activity }
+  activities_from_table(activities)
 end
 
 When /^I'm on the activities page$/ do
@@ -7,7 +7,7 @@ When /^I'm on the activities page$/ do
 end
 
 Then /^I should see all the activities$/ do
-  @activities.each do |activity|
+  activities.each do |activity|
     within_table('activities') do
       page.should have_content(activity.title)
     end
@@ -32,3 +32,5 @@ Then /^I should be able to navigate to the new activity page$/ do
   click_on('New Activity')
   current_path.should eq(new_activity_path)
 end
+
+World(ActivityHelper)
