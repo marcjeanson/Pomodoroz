@@ -8,6 +8,13 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    redirect_to activities_path, notice: t("flash.activity_created")
+    @activity = Activity.new(params[:activity])
+
+    if @activity.save
+      redirect_to activities_path, notice: t("flash.notices.activity_created")
+    else
+      flash.now[:error] = t("flash.errors.activity_save")
+      render :new
+    end
   end
 end

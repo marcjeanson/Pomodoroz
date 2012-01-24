@@ -3,4 +3,7 @@
 
 en:
   flash:
-    activity_created: "The Activity was created"
+    notices:
+      activity_created: "The Activity was created"
+    errors:
+      activity_save: "An error occurred when saving the Activity"

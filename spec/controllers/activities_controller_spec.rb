@@ -22,16 +22,27 @@ describe ActivitiesController do
   end
 
   context "post .create" do
+    let!(:activity) { stub_model(Activity) }
+
     context "with valid activity data" do
       before do
+        Activity.stub(:new).with('title' => 'Check twitter').and_return(activity)
+        activity.stub(:save).and_return(true)
         post :create, activity: { title: "Check twitter" }
       end
 
       it { should redirect_to(activities_path) }
-      it { should set_the_flash.to(I18n.t("flash.activity_created")) }
+      it { should set_the_flash.to(I18n.t("flash.notices.activity_created")) }
     end
 
     context "with invalid activity data"
-  end
+      before do
+        Activity.stub(:new).and_return(activity)
+        activity.stub(:save).and_return(false)
+        post :create
+      end
 
+      it { should render_template(:new) }
+      it { should set_the_flash.now.to(I18n.t("flash.errors.activity_save")) }
+  end
 end
