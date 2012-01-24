@@ -13,3 +13,15 @@ Then /^I should see all the activities$/ do
     end
   end
 end
+
+Given /^I'm on the new activity page$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I submit valid data for the new activity$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see the new activity in the activities list$/ do
+  pending # express the regexp above with the code you wish you had
+end
