@@ -45,6 +45,7 @@ test: &test
   pool: 5
   username: deploy
   password:
+  min_messages: error
 
 production:
   adapter: postgresql
