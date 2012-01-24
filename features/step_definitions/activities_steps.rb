@@ -27,3 +27,8 @@ Then /^I should see the new activity in the activities list$/ do
   visit activities_path
   page.should have_content('Read email')
 end
+
+Then /^I should be able to navigate to the new activity page$/ do
+  click_on('New Activity')
+  current_path.should eq(new_activity_path)
+end

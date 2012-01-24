@@ -16,3 +16,7 @@ Feature: Activities
     Given I'm on the new activity page
     When I submit valid data for the new activity
     Then I should see the new activity in the activities list
+
+  Scenario: New Activity navigation
+    Given I'm on the activities page
+    Then I should be able to navigate to the new activity page
