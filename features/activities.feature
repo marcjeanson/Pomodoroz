@@ -11,3 +11,8 @@ Feature: Activities
       | Practice presentation          |
     When I'm on the activities page
     Then I should see all the activities
+
+  Scenario: Create an activity
+    Given I'm on the new activity page
+    When I submit valid data for the new activity
+    Then I should see the new activity in the activities list
