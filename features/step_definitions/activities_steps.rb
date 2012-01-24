@@ -15,13 +15,15 @@ Then /^I should see all the activities$/ do
 end
 
 Given /^I'm on the new activity page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit new_activity_path
 end
 
 When /^I submit valid data for the new activity$/ do
-  pending # express the regexp above with the code you wish you had
+  fill_in('Title', with: 'Read email')
+  click_on('Create Activity')
 end
 
 Then /^I should see the new activity in the activities list$/ do
-  pending # express the regexp above with the code you wish you had
+  visit activities_path
+  page.should_have_content('Read email')
 end
