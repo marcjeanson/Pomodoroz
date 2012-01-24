@@ -2,4 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  navigation:
+    new_activity: "New Activity"
+  flash:
+    notices:
+      activity_created: "The Activity was created"
+    errors:
+      activity_save: "An error occurred when saving the Activity"
