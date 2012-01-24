@@ -8,5 +8,6 @@ describe ActivitiesController do
 
     it { should respond_with(:success) }
     it { should render_template(:index) }
+    it { should assign_to(:activities) }
   end
 end
