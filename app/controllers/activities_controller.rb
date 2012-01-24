@@ -8,6 +8,6 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    redirect_to activities_path
+    redirect_to activities_path, notice: t("flash.activity_created")
   end
 end

@@ -28,6 +28,7 @@ describe ActivitiesController do
       end
 
       it { should redirect_to(activities_path) }
+      it { should set_the_flash.to(I18n.t("flash.activity_created")) }
     end
 
     context "with invalid activity data"
