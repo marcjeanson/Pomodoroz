@@ -33,4 +33,12 @@ Then /^I should be able to navigate to the new activity page$/ do
   current_path.should eq(new_activity_path)
 end
 
+When /^I delete an activity in the list$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^the activity should be removed permanently$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
 World(ActivityHelper)
