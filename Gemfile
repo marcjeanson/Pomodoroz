@@ -37,7 +37,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'capybara'
   gem 'shoulda', '>= 3.0.0.beta'
   gem 'factory_girl_rails'
