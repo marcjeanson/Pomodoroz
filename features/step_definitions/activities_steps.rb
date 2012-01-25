@@ -1,4 +1,4 @@
-Given /^that activities exist$/ do
+Given /^that I have activities$/ do
   create_activities
 end
 
