@@ -11,11 +11,21 @@ Feature: Activities
   Scenario: Create an activity
     Given I'm on the new activity page
     When I submit valid data for the new activity
-    Then I should see the new activity in the activities list
+    Then I should see the activity in the activities list
 
   Scenario: New Activity navigation
     Given I'm on the activities page
     Then I should be able to navigate to the new activity page
+
+  Scenario: Update an activity
+    Given I'm editing an activity
+    When I submit valid data for the activity
+    Then I should see the activity in the activities list
+
+  Scenario: Edit Activity navigation
+    Given that activities exist
+    And I'm on the activities page
+    Then I should be able to navigate to the edit activity page
 
   Scenario: Deleting an activity
     Given that activities exist

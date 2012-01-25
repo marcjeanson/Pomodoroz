@@ -23,13 +23,8 @@ Given /^I'm on the new activity page$/ do
 end
 
 When /^I submit valid data for the new activity$/ do
-  fill_in('Title', with: 'Read email')
+  fill_in('Title', with: valid_attributes[:title])
   click_on('Create Activity')
-end
-
-Then /^I should see the new activity in the activities list$/ do
-  visit activities_path
-  page.should have_content('Read email')
 end
 
 Then /^I should be able to navigate to the new activity page$/ do
@@ -46,6 +41,29 @@ end
 Then /^the activity should be removed permanently$/ do
   current_path.should eq(activities_path)
   page.should_not have_content(activities.first.title)
+end
+
+Given /^I'm editing an activity$/ do
+  activity = create_activity("edit me")
+  visit edit_activity_path(activity)
+end
+
+When /^I submit valid data for the activity$/ do
+  fill_in('Title', with: valid_attributes[:title])
+  click_on('Update Activity')
+end
+
+Then /^I should see the activity in the activities list$/ do
+  visit activities_path
+  page.should have_content(activity.title)
+end
+
+Then /^I should be able to navigate to the edit activity page$/ do
+  activity_to_edit = activities.first
+  within("#activity_#{activity_to_edit.id}") do
+    click_on('Edit')
+  end
+  current_path.should eq(edit_activity_path(activity_to_edit))
 end
 
 World(ActivityHelper)

@@ -4,4 +4,5 @@ table id="activities"
   - @activities.each do |activity|
     = content_tag_for(:tr, activity) do
       td = activity.title
+      td = link_to t('navigation.edit_activity'), edit_activity_path(activity)
       td = link_to t('navigation.delete_activity'), activity, :method => :delete

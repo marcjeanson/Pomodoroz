@@ -4,10 +4,12 @@
 en:
   navigation:
     new_activity: "New Activity"
+    edit_activity: "Edit"
     delete_activity: "Delete"
   flash:
     notices:
       activity_created: "The Activity was created"
-      activity_created: "The Activity was deleted"
+      activity_updated: "The Activity was updated"
+      activity_deleted: "The Activity was deleted"
     errors:
       activity_save: "An error occurred when saving the Activity"
