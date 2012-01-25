@@ -38,11 +38,14 @@ Then /^I should be able to navigate to the new activity page$/ do
 end
 
 When /^I delete an activity in the list$/ do
-  pending # express the regexp above with the code you wish you had
+  within("#activity_#{activities.first.id}") do
+    click_on('Delete')
+  end
 end
 
 Then /^the activity should be removed permanently$/ do
-  pending # express the regexp above with the code you wish you had
+  current_path.should eq(activities_path)
+  page.should_not have_content(activities.first.title)
 end
 
 World(ActivityHelper)

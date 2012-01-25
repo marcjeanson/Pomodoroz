@@ -18,6 +18,7 @@ Feature: Activities
     Then I should be able to navigate to the new activity page
 
   Scenario: Deleting an activity
-    Given I'm on the activities page
+    Given that activities exist
+    And I'm on the activities page
     When I delete an activity in the list
     Then the activity should be removed permanently

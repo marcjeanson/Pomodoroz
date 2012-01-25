@@ -2,5 +2,6 @@
 
 table id="activities"
   - @activities.each do |activity|
-    tr
+    = content_tag_for(:tr, activity) do
       td = activity.title
+      td = link_to t('navigation.delete_activity'), activity, :method => :delete
