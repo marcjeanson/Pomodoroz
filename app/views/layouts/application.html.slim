@@ -6,7 +6,7 @@ html
     = javascript_include_tag "application"
     = csrf_meta_tags
     = yield :doc_head
-    
+
   body
     div class="topbar"
       div class="topbar-inner"
@@ -14,6 +14,7 @@ html
           ul class="nav"
             li class="active" = link_to t('navigation.activities'), activities_path
             li = link_to t('navigation.new_activity'), new_activity_path
+            li = link_to t('navigation.charts'), charts_path
     div class="container"
       == render 'layouts/timer'
       == yield
