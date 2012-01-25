@@ -11,6 +11,11 @@ class PomodorosController < ApplicationController
     @pomodoro.complete!
   end
 
+  def reset
+    @pomodoro = @activity.pomodoros.find(params[:id])
+    @pomodoro.reset!
+  end
+
   private
   def find_activity
     @activity = Activity.find params[:activity_id]

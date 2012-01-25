@@ -4,6 +4,7 @@ Pomodoroz::Application.routes.draw do
     resources :pomodoros do
       member do
         put 'complete'
+        put 'reset'
       end
     end
   end

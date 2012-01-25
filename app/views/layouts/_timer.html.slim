@@ -1,1 +1,4 @@
 div id="timer"
+div id="reset_timer"
+  - if @pomodoro
+    == render 'activities/reset_link', locals: { activity_id: @pomodoro.activity.id, pomodoro_id: @pomodoro.id }
