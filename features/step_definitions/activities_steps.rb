@@ -55,7 +55,7 @@ end
 
 Then /^I should see the activity in the activities list$/ do
   visit activities_path
-  page.should have_content(activity.title)
+  page.should have_content(valid_attributes[:title])
 end
 
 Then /^I should be able to navigate to the edit activity page$/ do

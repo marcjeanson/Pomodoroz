@@ -41,6 +41,7 @@ end
 group :test do
   gem 'cucumber-rails', require: false
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'shoulda', '>= 3.0.0.beta'
   gem 'factory_girl_rails'
   gem 'launchy'
