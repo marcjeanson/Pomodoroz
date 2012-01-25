@@ -20,4 +20,8 @@ html
                 == render partial: 'activities/reset_link', locals: { activity_id: @pomodoro.activity.id, pomodoro_id: @pomodoro.id }
     div class="container"
       == render 'layouts/timer'
+
+      - flash.each do |name, msg| 
+        = content_tag :div, msg, id: "flash#{name}", class: "alert-message #{name}"
+
       == yield
