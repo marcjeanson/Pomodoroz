@@ -1,5 +1,9 @@
+Given /^that activities exist$/ do
+  create_activities
+end
+
 Given /^the following activities exist:$/ do |activities|
-  @activities = activities.hashes.collect { |activity| Activity.create! activity }
+  activities_from_table(activities)
 end
 
 When /^I'm on the activities page$/ do
@@ -7,7 +11,7 @@ When /^I'm on the activities page$/ do
 end
 
 Then /^I should see all the activities$/ do
-  @activities.each do |activity|
+  activities.each do |activity|
     within_table('activities') do
       page.should have_content(activity.title)
     end
@@ -32,3 +36,16 @@ Then /^I should be able to navigate to the new activity page$/ do
   click_on('New Activity')
   current_path.should eq(new_activity_path)
 end
+
+When /^I delete an activity in the list$/ do
+  within("#activity_#{activities.first.id}") do
+    click_on('Delete')
+  end
+end
+
+Then /^the activity should be removed permanently$/ do
+  current_path.should eq(activities_path)
+  page.should_not have_content(activities.first.title)
+end
+
+World(ActivityHelper)

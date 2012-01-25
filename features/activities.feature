@@ -4,11 +4,7 @@ Feature: Activities
   So that I know what I have to work on
 
   Scenario: Listing activities
-    Given the following activities exist:
-      | title                          |
-      | Create presentation slides     |
-      | Create demo appliation         |
-      | Practice presentation          |
+    Given that activities exist
     When I'm on the activities page
     Then I should see all the activities
 
@@ -20,3 +16,9 @@ Feature: Activities
   Scenario: New Activity navigation
     Given I'm on the activities page
     Then I should be able to navigate to the new activity page
+
+  Scenario: Deleting an activity
+    Given that activities exist
+    And I'm on the activities page
+    When I delete an activity in the list
+    Then the activity should be removed permanently
