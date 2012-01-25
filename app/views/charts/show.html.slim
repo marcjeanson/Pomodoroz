@@ -1,0 +1,47 @@
+- content_for :doc_head do
+  = javascript_include_tag "hc/highcharts"
+  = javascript_include_tag "hc/themes/gray"
+
+javascript:
+  var chart;
+  $(document).ready(function() {
+  	chart = new Highcharts.Chart({
+  		chart: { renderTo: 'container', defaultSeriesType: 'column'},
+  		title: { text: 'Last Seven Days Productivity'},
+  		subtitle: { text: 'Total of Completed and Reset Pomodoroz'},
+  		xAxis: { categories: [ #{@dates.map { |d| "'#{d.strftime('%a %b %d')}'" }.join(',')} ] },
+  		yAxis: { min: 0, title: { text: 'Pomodoroz' } },
+  		legend: {
+  			layout: 'vertical',
+  			backgroundColor: '#FFFFFF',
+  			align: 'left',
+  			verticalAlign: 'top',
+  			x: 100,
+  			y: 70,
+  			floating: true,
+  			shadow: true
+  		},
+  		tooltip: {
+  			formatter: function() {
+  				return ''+
+  					this.x +': '+ this.y +' pomz';
+  			}
+  		},
+  		plotOptions: {
+  			column: {
+  				pointPadding: 0.2,
+  				borderWidth: 0
+  			}
+  		},
+  	  series: [
+  	    { name: 'Completed', data: [#{@completed.join(',')}]},
+  	    { name: 'Reset', data: [#{@reset.join(',')}]},
+  	  ]
+  	});
+	
+	
+  });
+  
+= link_to t('Back'), activities_path
+
+div#container

@@ -1,5 +1,6 @@
 Pomodoroz::Application.routes.draw do
   root to: 'activities#index'
+  resource :charts, :only => :show
   resources :activities do
     resources :pomodoros do
       member do
