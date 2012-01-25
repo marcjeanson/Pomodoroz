@@ -1,4 +1,7 @@
 div id="timer"
 div id="reset_timer"
   - if @pomodoro
-    == render 'activities/reset_link', locals: { activity_id: @pomodoro.activity.id, pomodoro_id: @pomodoro.id }
+    == render partial: 'activities/reset_link', locals: { activity_id: @pomodoro.activity.id, pomodoro_id: @pomodoro.id }
+
+- if @pomodoro
+  = javascript_tag "pomodoro_timer(#{@pomodoro.activity.id}, #{@pomodoro.id}, #{@time_left})"

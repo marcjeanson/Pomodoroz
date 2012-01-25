@@ -8,5 +8,12 @@ html
     = yield :doc_head
     
   body
-    == render 'layouts/timer'
-    == yield
+    div class="topbar"
+      div class="topbar-inner"
+        div class="container"
+          ul class="nav"
+            li class="active" = link_to t('navigation.activities'), activities_path
+            li = link_to t('navigation.new_activity'), new_activity_path
+    div class="container"
+      == render 'layouts/timer'
+      == yield
