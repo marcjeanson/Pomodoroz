@@ -33,7 +33,8 @@ Feature: Activities
     When I delete an activity in the list
     Then the activity should be removed permanently
 
+@wip
   Scenario: Mark and activity as completed
     Given I'm on the activities page
-    When I mark and activity as completed
-    Then the activity should be registered as done
+    When  I mark and activity as completed
+    Then  the activity should be registered as done

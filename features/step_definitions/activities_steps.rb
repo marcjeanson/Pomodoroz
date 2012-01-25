@@ -68,7 +68,7 @@ end
 
 When /^I mark and activity as completed$/ do
   within("#activity_#{Activity.first.id}") do
-    check('Completed')  # likely want a dom id here if there is no label
+    check('activity_completed')  # likely want a dom id here if there is no label
   end
 end
 
