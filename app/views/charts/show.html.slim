@@ -7,9 +7,9 @@ javascript:
   $(document).ready(function() {
   	chart = new Highcharts.Chart({
   		chart: { renderTo: 'container', defaultSeriesType: 'column'},
-  		title: { text: 'Productivity Chart'},
-  		subtitle: { text: 'Average Complete Pomodoroz'},
-  		xAxis: { categories: [ 'Daily', 'Weekly', 'Monthly' ] },
+  		title: { text: 'Last Seven Days Productivity'},
+  		subtitle: { text: 'Total of Completed and Reset Pomodoroz'},
+  		xAxis: { categories: [ #{@dates.map { |d| "'#{d.strftime('%a %b %d')}'" }.join(',')} ] },
   		yAxis: { min: 0, title: { text: 'Pomodoroz' } },
   		legend: {
   			layout: 'vertical',
@@ -34,8 +34,8 @@ javascript:
   			}
   		},
   	  series: [
-  	    { name: 'User1', data: [49.9, 71.5, 106.4]},
-  	    { name: 'User2', data: [28, 60, 88]},
+  	    { name: 'Completed', data: [#{@completed.join(',')}]},
+  	    { name: 'Reset', data: [#{@reset.join(',')}]},
   	  ]
   	});
 	
