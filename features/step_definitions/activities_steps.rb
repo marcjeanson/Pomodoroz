@@ -67,13 +67,14 @@ Then /^I should be able to navigate to the edit activity page$/ do
 end
 
 When /^I mark and activity as completed$/ do
-  within("#activity_#{Activity.first.id}") do
+  @completed = Activity.first.id
+  within("#activity_#{@completed}") do
     check('activity_completed')  # likely want a dom id here if there is no label
   end
 end
 
 Then /^the activity should be registered as done$/ do
-  Activity.first.completed?.should be_true
+  Activity.find(@completed).completed?.should be_true
 end
 
 World(ActivityHelper)
