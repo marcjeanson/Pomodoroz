@@ -1,5 +1,6 @@
-= javascript_include_tag "hc/highcharts"
-= javascript_include_tag "hc/themes/gray"
+- content_for :doc_head do
+  = javascript_include_tag "hc/highcharts"
+  = javascript_include_tag "hc/themes/gray"
 
 javascript:
   var chart;
