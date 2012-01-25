@@ -1,4 +1,7 @@
-= link_to t('navigation.new_activity'), new_activity_path
+div
+  = link_to t('navigation.new_activity'), new_activity_path
+div
+  = link_to t('navigation.charts'), charts_path
 
 table id="activities"
   - @activities.each do |activity|
