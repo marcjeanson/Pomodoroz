@@ -7,6 +7,7 @@ en:
     edit_activity: "Edit"
     delete_activity: "Delete"
     start_pomodoro: "Start"
+    reset_pomodoro: "Reset"
   flash:
     notices:
       activity_created: "The Activity was created"

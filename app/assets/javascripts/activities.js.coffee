@@ -27,3 +27,9 @@ window.pomodoro_timer = (activity_id, pomodoro_id, time_in_seconds) ->
       $.ajax
         url: '/activities/' + activity_id + '/pomodoros/' + pomodoro_id + '/complete.js'
         type: 'PUT'
+
+window.reset_pomodoro_timer = (time_in_seconds) ->
+  $("#reset_timer").html ""
+  $("#timer").resetTimer
+    time_in_seconds: time_in_seconds
+    autostart: false

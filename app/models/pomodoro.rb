@@ -6,4 +6,8 @@ class Pomodoro < ActiveRecord::Base
   def complete!
     self.update_attribute :completed_at, Time.now
   end
+
+  def reset!
+    self.update_attribute :reset_at, Time.now
+  end
 end
