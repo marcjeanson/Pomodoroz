@@ -4,7 +4,7 @@ Feature: Pomodoros
   So that I can focus on the activity until the pomodoro is done
 
   Background:
-    Given that activities exist
+    Given that I have activities
     And I'm on the activities page
 
   @javascript
