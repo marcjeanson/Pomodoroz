@@ -1,2 +1,1 @@
-$("#timer").createTimer
-  time_in_seconds: 1500
+pomodoro_timer(<%= @activity.id %>, <%= @pomodoro.id %>, 1500)

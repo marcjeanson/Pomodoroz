@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery.the_final_countdown.1.1.min.js
+//= require soundmanager2-nodebug-jsmin.js

@@ -11,3 +11,7 @@ Feature: Pomodoros
   Scenario: Start the pomodoro timer for an activity
     When I start the timer for an activity
     Then the timer should be counting down
+
+  Scenario: Pomodoro completes successfully
+    When the pomodoro timer expires
+    Then the pomodoro should be marked as completed
