@@ -66,4 +66,14 @@ Then /^I should be able to navigate to the edit activity page$/ do
   current_path.should eq(edit_activity_path(activity_to_edit))
 end
 
+When /^I mark and activity as completed$/ do
+  within("#activity_#{Activity.first.id}") do
+    check('Completed')  # likely want a dom id here if there is no label
+  end
+end
+
+Then /^the activity should be registered as done$/ do
+  Activity.first.completed?.should be_true
+end
+
 World(ActivityHelper)

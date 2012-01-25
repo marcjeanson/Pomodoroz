@@ -33,5 +33,7 @@ Feature: Activities
     When I delete an activity in the list
     Then the activity should be removed permanently
 
-  #Scenario: Mark and activity as completed
-
+  Scenario: Mark and activity as completed
+    Given I'm on the activities page
+    When I mark and activity as completed
+    Then the activity should be registered as done
