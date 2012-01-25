@@ -15,6 +15,9 @@ html
             li class="active" = link_to t('navigation.activities'), activities_path
             li = link_to t('navigation.new_activity'), new_activity_path
             li = link_to t('navigation.charts'), charts_path
+            li id="reset_timer"
+              - if @pomodoro
+                == render partial: 'activities/reset_link', locals: { activity_id: @pomodoro.activity.id, pomodoro_id: @pomodoro.id }
     div class="container"
       == render 'layouts/timer'
       == yield
