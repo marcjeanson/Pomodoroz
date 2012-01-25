@@ -1,4 +1,6 @@
 Pomodoroz::Application.routes.draw do
   root to: 'activities#index'
-  resources :activities
+  resources :activities do
+    resources :pomodoros
+  end
 end
