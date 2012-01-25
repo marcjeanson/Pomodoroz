@@ -1,4 +1,4 @@
-Given /^that activities exist$/ do
+Given /^that I have activities$/ do
   create_activities
 end
 
@@ -64,6 +64,17 @@ Then /^I should be able to navigate to the edit activity page$/ do
     click_on('Edit')
   end
   current_path.should eq(edit_activity_path(activity_to_edit))
+end
+
+When /^I mark and activity as completed$/ do
+  @completed = Activity.first.id
+  within("#activity_#{@completed}") do
+    check('activity_completed')  # likely want a dom id here if there is no label
+  end
+end
+
+Then /^the activity should be registered as done$/ do
+  Activity.find(@completed).completed?.should be_true
 end
 
 World(ActivityHelper)

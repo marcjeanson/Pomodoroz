@@ -3,8 +3,10 @@ Feature: Activities
   I want to be able to manage activities
   So that I know what I have to work on
 
+  Background:
+    Given that I have activities
+
   Scenario: Listing activities
-    Given that activities exist
     When I'm on the activities page
     Then I should see all the activities
 
@@ -23,12 +25,16 @@ Feature: Activities
     Then I should see the activity in the activities list
 
   Scenario: Edit Activity navigation
-    Given that activities exist
     And I'm on the activities page
     Then I should be able to navigate to the edit activity page
 
   Scenario: Deleting an activity
-    Given that activities exist
     And I'm on the activities page
     When I delete an activity in the list
     Then the activity should be removed permanently
+
+@wip @javascript
+  Scenario: Mark and activity as completed
+    Given I'm on the activities page
+    When  I mark and activity as completed
+    Then  the activity should be registered as done
