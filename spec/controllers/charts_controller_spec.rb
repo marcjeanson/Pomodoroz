@@ -10,6 +10,7 @@ describe ChartsController do
     let(:reset) { days.map { |d| stub_model(Pomodoro, reset_at: d) } }
 
     before do 
+      controller.stub(:current_pomodoro)
       Date.stub(:today).and_return(today)
       Pomodoro.stub(:where).with("completed_at >= '#{sda}'").and_return(completed)
       Pomodoro.stub(:where).with("reset_at >= '#{sda}'").and_return(reset)
