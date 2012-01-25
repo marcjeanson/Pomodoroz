@@ -19,8 +19,8 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
-    @activity = Activity.find_by_id(params[:id])
-    @activity.try(:destroy)
+    activity = Activity.find(params[:id])
+    activity.destroy
     redirect_to activities_path, notice: t("flash.notices.activity_deleted")
   end
 end

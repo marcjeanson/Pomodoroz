@@ -51,7 +51,7 @@ describe ActivitiesController do
 
     context "when the activity is found" do
       before do
-        Activity.stub(:find_by_id).with('1').and_return(activity)
+        Activity.stub(:find).with('1').and_return(activity)
         activity.should_receive(:destroy)
         delete :destroy, :id => 1
       end
@@ -62,12 +62,12 @@ describe ActivitiesController do
 
     context "when the activity is not found" do
       before do
-        Activity.stub(:find_by_id).with('1').and_return(nil)
+        Activity.stub(:find).with('1').and_raise(ActiveRecord::RecordNotFound)
         activity.should_not_receive(:destroy)
         delete :destroy, :id => 1
       end
 
-      it { should redirect_to(activities_path) }
+      it { should respond_with(:not_found) }
     end
   end
 end
